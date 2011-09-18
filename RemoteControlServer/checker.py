@@ -50,9 +50,9 @@ class PublicKeyCredentialsChecker:
             if not credentials.signature:
                 return failure.Failure(error.ValidPublicKey())
             
-            pubKey = keys.Key.fromString(credentials.blob).keyObject
-            if keys.verifySignature(pubKey, credentials.signature,
-                                    credentials.sigData):
+            pubKey = keys.Key.fromString(credentials.blob)
+            if pubKey.verify(credentials.signature,
+                    credentials.sigData):
                 print "login as %s" % credentials.username
                 database.updateUserName(credentials.blob, credentials.username)
                 return credentials.username

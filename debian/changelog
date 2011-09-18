@@ -1,0 +1,18 @@
+remotecontrolserver (0.3.0-1aircable2) natty; urgency=low
+
+  * Missing setuptools 
+
+ -- Manuel Francisco Naranjo <manuel@aircable.net>  Sun, 18 Sep 2011 15:18:58 -0700
+
+remotecontrolserver (0.3.0-1aircable1) natty; urgency=low
+
+  * Bumped version number
+
+ -- Manuel Francisco Naranjo <manuel@aircable.net>  Sun, 18 Sep 2011 15:17:12 -0700
+
+remotecontrolserver (0.2.0-1aircable1) natty; urgency=low
+
+  * Initial release for natty
+
+ -- Manuel Francisco Naranjo <manuel@aircable.net>  Sun, 18 Sep 2011 14:10:52 -0700
+

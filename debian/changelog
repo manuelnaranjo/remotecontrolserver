@@ -1,3 +1,9 @@
+remotecontrolserver (0.3.1-1aircable1) natty; urgency=low
+
+  * Removed all debian stuff from the orig file
+
+ -- Manuel Francisco Naranjo <manuel@aircable.net>  Sun, 18 Sep 2011 17:05:38 -0700
+
 remotecontrolserver (0.3.0-1aircable2) natty; urgency=low
 
   * Missing setuptools 

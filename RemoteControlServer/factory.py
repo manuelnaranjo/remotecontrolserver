@@ -6,7 +6,7 @@
 
 from rsa import getRSAKeys
 from twisted.conch.ssh import factory, userauth, connection, keys
-
+import transport
 
 publicKey, privateKey = getRSAKeys();
 
@@ -14,6 +14,7 @@ class ForwardFactory(factory.SSHFactory):
     """
     A factory ready for remote control management
     """
+    protocol = transport.ForwardTransport
     publicKeys = {
         'ssh-rsa': keys.Key.fromString(data=publicKey)
     }

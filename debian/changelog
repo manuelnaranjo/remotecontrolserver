@@ -1,3 +1,10 @@
+remotecontrolserver (0.3.2-1aircable1) natty; urgency=low
+
+  * Fixed a couple of bugs related to connection lost
+    on user side
+
+ -- Manuel Francisco Naranjo <manuel@aircable.net>  Tue, 27 Sep 2011 02:10:59 -0700
+
 remotecontrolserver (0.3.1-1aircable1) natty; urgency=low
 
   * Removed all debian stuff from the orig file

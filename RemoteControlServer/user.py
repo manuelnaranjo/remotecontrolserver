@@ -100,7 +100,6 @@ class ForwardUser(avatar.ConchUser):
                 return 1
 
     def global_cancel_tcpip_forward(self, data):
-	
         hostToBind, portToBind = forwarding.unpackGlobal_tcpip_forward(data)
         print "forward cancel requested", portToBind
         
@@ -113,13 +112,17 @@ class ForwardUser(avatar.ConchUser):
         return 1
     
     def annon_disconnect(self):
-        del ForwardUser.loggedin[self]
         self.conn.transport.sendDisconnect(DISCONNECT_RESERVED, 
                                            "Annonymous login expired")
         self.logOut()
+
     
     def logOut(self):
         self.updateAccumulatedTime()
+        for listener in self.listeners.values():
+            listener.stopListening();
+        del ForwardUser.loggedin[self]
+        del self
         
     def updateAccumulatedTime(self):
         database.updateUserAccumulatedTime(self.pubkey)

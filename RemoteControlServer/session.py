@@ -29,7 +29,14 @@ class ForwardSession:
 
     def eofReceived(self):
         print "eof received"
+        try:
+            self.user.logout()
+        except Exception, err:
+            print err
 
     def closed(self):
         print "connection closed"
-        self.user.logOut()
+        try:
+            self.user.logOut()
+        except Exception, err:
+            print err

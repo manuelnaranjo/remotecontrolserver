@@ -242,7 +242,13 @@ def disableUser(key=None):
 def updateUserAccumulatedTime(key=None):
     c = conn.cursor()
     key=encodestring(key)
-    user=list(getUser(key=key))[0]
+    user = getUser(key=key)
+    if not user or len(user)==0:
+        print "failed to get user"
+        conn.commit()
+        c.close()
+        return
+    user=list(user)[0]
     last_login=int(user['unix_time'])
     now = time()
     elapsed=now-last_login
